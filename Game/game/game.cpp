@@ -5,7 +5,7 @@
 
 
 using namespace std;
-int Q_No = 1;
+int qNo = 1;
 int correct = 0;
 int wrong = 0;
 bool ask[11] = {true, true, true, true, true, true, true, true, true, true, true};
@@ -40,7 +40,7 @@ void credits() {
     
 }
 
-void display_random_question();
+void displayRandomQuestion();
 void display();
 void question(string question,string a, string b, string c,string d, char correct_answer);
 void result();
@@ -74,21 +74,21 @@ int main()
 void display() {
     for(int i = 0;i<5;i++){
         system("cls");
-        cout << "Question NO:" << Q_No << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
-        display_random_question();
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        displayRandomQuestion();
     }
 }
-void display_random_question() {
+void displayRandomQuestion() {
     srand(time(0));
     //it makes sure the number is random//
-    bool is_question_remaining = false;
+    bool isQuestionRemaining = false;
     for (int i = 0; i < 10; i++) {
         if (ask[i]) {
-            is_question_remaining = true;
+            isQuestionRemaining = true;
             break;
         }
     }
-    while (is_question_remaining) {
+    while (isQuestionRemaining) {
         int num = rand() % 10;
         if (ask[num]) {
             ask[num] = false;
@@ -135,19 +135,19 @@ void display_random_question() {
 void result()
 {
     system("cls");
-    cout << "Total questions = " << Q_No - 1 << endl;
+    cout << "Total questions = " << qNo - 1 << endl;
     cout << "Your points = " << correct << endl;
     cout << "Wrong answers = " << wrong << endl;
     
 
 }
-void question(string question, string a, string b, string c, string d, char correct_answer) {
+void question(string question, string a, string b, string c, string d, char correctAnswer) {
     cout << question << endl<<endl<<endl;
     cout << "A) " << a << " B) " << b << endl << "C) " << c << " D) " << d<<endl;
     char answer;
     cout <<endl<<endl<< "Please input your answer: ";
     cin >> answer;
-    if (answer == correct_answer) {
+    if (answer == correctAnswer) {
         correct+=10;
 
     }
@@ -155,6 +155,8 @@ void question(string question, string a, string b, string c, string d, char corr
         wrong++;
         correct -= 5;
     }
-    Q_No++;
+    qNo++;
     display();
 }
+
+
