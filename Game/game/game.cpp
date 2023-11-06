@@ -48,7 +48,7 @@ void menu() {
     system("cls");
     int choice;
     do {
-        cout << "1-PLAY" << endl << "2-RULES" << endl << "3-CREDITS" << endl << endl << "Enter your choice: ";
+        cout << "1-PLAY" << endl << "2-RULES" << endl << "3-CREDITS" << endl << "4-EXIT" << endl << endl << "Enter your choice: ";
         cin >> choice;
         switch (choice) {
         case 1:
@@ -63,13 +63,10 @@ void menu() {
         case 3:
             credits();
             break;
+        case 4:
+            exit(0);
         }
     } while (choice != 1 && choice != 2 && choice != 3);
-}
-int main()
-{
-    system("color 0B");
-    menu();    
 }
 void display() {
     for(int i = 0;i<5;i++){
@@ -134,11 +131,19 @@ void displayRandomQuestion() {
 }
 void result()
 {
+    int back;
     system("cls");
     cout << "Total questions = " << qNo - 1 << endl;
     cout << "Your points = " << correct << endl;
     cout << "Wrong answers = " << wrong << endl;
-    
+    cout << "If you want to exit the credits enter 0: ";
+    cin >> back;
+    switch (back) 
+    {
+        case 0:
+        menu();
+        break;
+    }
 
 }
 void question(string question, string a, string b, string c, string d, char correctAnswer) {
@@ -158,5 +163,8 @@ void question(string question, string a, string b, string c, string d, char corr
     qNo++;
     display();
 }
-
-
+int main()
+{
+    system("color 0B");
+    menu();
+}
