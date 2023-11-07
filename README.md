@@ -6,7 +6,7 @@ they will also lern a lot about Ecology and will be more aware of their surround
 
 
 ## :pencil2: Our LOGO
-<img align="center" src="C:\Users\User\Documents\Bio\images\logo.png" width="30">
+![logo][logo.png]
 
 
 
@@ -45,3 +45,6 @@ To install our project on your machine you just need to clone it. This can be do
 - <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20">  Git Hub
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/640px-Git-logo.svg.png" width="20">  Git
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/640px-ISO_C%2B%2B_Logo.svg.png" width="20"> C++
+
+
+[def]: "C:\Users\User\Documents\Bio\images\logo.png"?raw=true
