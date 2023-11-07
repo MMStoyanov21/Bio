@@ -5,6 +5,11 @@ The main idea is that while the people play the game and try to quess the right 
 they will also lern a lot about Ecology and will be more aware of their surrounding world.
 
 
+## :pencil2: Our LOGO
+<img align="center" src="C:\Users\User\Documents\Bio\images\logo.png" width="30">
+
+
+
 
 ## <img align="center" src="https://cdn-icons-png.flaticon.com/512/3708/3708519.png" width="30"> Demo of our project
 
