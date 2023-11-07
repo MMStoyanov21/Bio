@@ -6,7 +6,7 @@ they will also lern a lot about Ecology and will be more aware of their surround
 
 
 ## :pencil2: Our LOGO
-<img align="center" src="![logo](image.png)" width="30">
+<p float="left" align="center"> <img src="/images/logo.png" width="350">
 
 
 ## <img align="center" src="https://cdn-icons-png.flaticon.com/512/3708/3708519.png" width="30"> Demo of our project
