@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <ctime>
+#include <windows.h>
 
 
 
@@ -39,6 +40,7 @@ void credits() {
     } while (back != 0);
     
 }
+ 
 
 void displayRandomQuestion();
 void display();
@@ -74,6 +76,9 @@ void display() {
         cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
         displayRandomQuestion();
     }
+}
+void printCenteredText()
+{
 }
 void displayRandomQuestion() {
     srand(time(0));
@@ -167,4 +172,5 @@ int main()
 {
     system("color 0B");
     menu();
+    
 }

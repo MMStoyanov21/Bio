@@ -1,4 +1,8 @@
 ## <img align="center" src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Actions-help-about-icon.png" width="30"> About
+Our game is like an Ecology guiz and it's purpose is to teach young and old people
+about ecological concepts, such as food chains, ecosystems and the balance of nature.
+The main idea is that while the people play the game and try to quess the right answer
+they will also lern a lot about Ecology and will be more aware of their surrounding world.
 
 
 
