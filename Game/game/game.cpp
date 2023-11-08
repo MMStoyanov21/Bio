@@ -138,7 +138,7 @@ void result()
 {
     int back;
     system("cls");
-    if (correct == 10)
+    if (correct == 100)
     {
         cout << "                                                                                    ,---,    ,---,    ,---, " << endl;
         cout << "                                                                                 ,`--.' | ,`--.' | ,`--.' | " << endl;
