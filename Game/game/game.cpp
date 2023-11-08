@@ -44,7 +44,7 @@ void credits() {
 
 void displayRandomQuestion();
 void display();
-void question(string question,string a, string b, string c,string d, char correct_answer);
+void question(string question,string a, string b, string c,string d, char correctAnswer);
 void result();
 void menu() {
     system("cls");
@@ -138,18 +138,46 @@ void result()
 {
     int back;
     system("cls");
-    cout << "Total questions = " << qNo - 1 << endl;
-    cout << "Your points = " << correct << endl;
-    cout << "Wrong answers = " << wrong << endl;
-    cout << "If you want to exit the credits enter 0: ";
-    cin >> back;
-    switch (back) 
+    if (correct == 10)
     {
+        cout << "                                                                                    ,---,    ,---,    ,---, " << endl;
+        cout << "                                                                                 ,`--.' | ,`--.' | ,`--.' | " << endl;
+        cout << "                                                                                 |   :  : |   :  : |   :  : " << endl;
+        cout << "        ,---,                                                                    '   '  ; '   '  ; '   '  ; " << endl;
+        cout << "       /_ ./|   ,---.           ,--,                  .---.   ,---.        ,---, |   |  | |   |  | |   |  | " << endl;
+        cout << " ,---, |  ' :  '   ,'\        ,'_ /|                 /. ./|  '   ,'\   ,-+-. /  |'   :  ; '   :  ; '   :  ; " << endl;
+        cout << "/___/ \.  : | /   /   |  .--. |  | :              .-'-. ' | /   /   | ,--.'|'   ||   |  ' |   |  ' |   |  ' " << endl;
+        cout << " .  \  \ ,' '.   ; ,. :,'_ /| :  . |             /___/ \: |.   ; ,. :|   |  ,'' |'   :    | '   :  | ' :  | " << endl;
+        cout << "  \  ;  `  ,''   | |: :|  ' | |  . .          .-'.. '   ' .'   | |: :|   | /  | |;   |  ; ;   |  ; ;   |  ; " << endl;
+        cout << "   \  \    ' '   | .; :|  | ' |  | |         /___/ \:     ''   | .; :|   | |  | |`---'. | `---'. | `---'. | " << endl;
+        cout << "    '  \   | |   :    |:  | : ;  ; |         .   \  ' .\   |   :    ||   | |  |/  `--..`;  `--..`;  `--..`; " << endl;
+        cout << "     \  ;  ;  \   \  / '  :  `--'   \         \   \   ' \ | \   \  / |   | |--'  .--,_    .--,_    .--,_    " << endl;
+        cout << "      :  \  \  `----'  :  ,      .-./          \   \  |--   `--- - ' |   |/      |    |`. |    |`. |    |`. " << endl;
+        cout << "       \  ' ;           `--`----'               \   \ |              '---'       `-- -`, ;`-- -`, ;`-- -`, ;" << endl;
+        cout << "        `--`                                     '---'                             '---`'   '-- - `'   '---`" << endl;
+        cout << "If you want to exit the page enter 0: ";
+        cin >> back;
+        switch (back)
+        {
         case 0:
-        menu();
-        break;
+            menu();
+            break;
+        }
     }
-
+    else
+    {
+        cout << "Total questions = " << qNo - 1 << endl;
+        cout << "Your points = " << correct << endl;
+        cout << "Wrong answers = " << wrong << endl;
+        cout << "If you want to exit the credits enter 0: ";
+        cin >> back;
+        switch (back)
+        {
+        case 0:
+            menu();
+            break;
+        }
+    }
 }
 void question(string question, string a, string b, string c, string d, char correctAnswer) {
     cout << question << endl<<endl<<endl;
