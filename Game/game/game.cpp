@@ -24,6 +24,7 @@ void rules() {
             break;
         }
     } while (back != 0);
+
     
 }
 void credits() {
@@ -47,9 +48,9 @@ void display();
 void question(string question,string a, string b, string c,string d, char correctAnswer);
 void result();
 void menu() {
-    system("cls");
     int choice;
     do {
+        system("CLS");
         cout << "1-PLAY" << endl << "2-RULES" << endl << "3-CREDITS" << endl << "4-EXIT" << endl << endl << "Enter your choice: ";
         cin >> choice;
         switch (choice) {
@@ -67,8 +68,9 @@ void menu() {
             break;
         case 4:
             exit(0);
+        default: continue;
         }
-    } while (choice != 1 && choice != 2 && choice != 3);
+    } while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
 }
 void display() {
     for(int i = 0;i<5;i++){
@@ -169,7 +171,22 @@ void result()
         cout << "Total questions = " << qNo - 1 << endl;
         cout << "Your points = " << correct << endl;
         cout << "Wrong answers = " << wrong << endl;
-        cout << "If you want to exit the credits enter 0: ";
+        cout << "        ,----,                                                                                                     " << endl;
+        cout << "      ,/   .`|                                                                                         ___    ,---," << endl;
+        cout << "    ,`   .'  :                                                                                        /  .\\ ,---.'|" << endl;
+        cout << "  ;    ;     /                                                             ,--,                       \\  ; ||   | :" << endl;
+        cout << ".'___,/    ,' __  ,-.                                                    ,--.'|         ,---,          `--' '   : '" << endl;
+        cout << "|    :     |,' ,'/ /|                              ,----._,.             |  |,      ,-+-. /  |              :   | |" << endl;
+        cout << ";    |.';  ;'  | |' |   .--,            ,--.--.   /   /  ' /   ,--.--.   `--'_     ,--.'|'   |              |   ' :" << endl;
+        cout << "`----'  |  ||  |   ,' /_ ./|           /       \\ |   :     |  /       \\  ,' ,'|   |   |  ,'' |              ;   ; |" << endl;
+        cout << "    '   :  ;'  :  /, ' , ' :          .--.  .-. ||   | .\\  . .--.  .-. | '  | |   |   | /  | |              '   | '" << endl;
+        cout << "    |   |  '|  | '/___/ \\: |           \\__\\/: . ..   ; ';  |  \\__\\/: . . |  | :   |   | |  | |              |   | :" << endl;
+        cout << "    '   :  |;  : | .  \\  ' |           ,' .--.; | '   .   . |  ,' .--.; | '  : | __ |   | |  |/          ___  '   :" << endl;
+        cout << "   ;   |.' |  , ;  \\  ;   :          /  /  ,.  | `---`-'| | /  /  ,.  | |  | '.'||   | |--'          /  .\\ |   | | " << endl;
+        cout << "    '---'    ---'    \\  \\  ;         ;  :   .'   \\.'__/\\_: |;  :   .'   \\;  :    ;|   |/              \\  ; |;   : ;" << endl;
+        cout << "                      :  \\  \\        |  ,     .-./|   :    :|  ,     .-./|  ,   / '---'                `--' | , /  " << endl;
+        cout << "                       \\  ' ;         `--`---'     \\   \\  /  `--`---'     ---`-'                            '---'  " << endl;
+        cout << "If you want to exit enter 0: ";
         cin >> back;
         switch (back)
         {
@@ -180,7 +197,7 @@ void result()
     }
 }
 void question(string question, string a, string b, string c, string d, char correctAnswer) {
-    cout << question << endl<<endl<<endl;
+    cout << question << endl << endl << endl;
     cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d<<endl;
     char answer;
     cout <<endl<<endl<< "Please input your answer: ";
