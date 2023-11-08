@@ -1,5 +1,14 @@
-## <img align="center" src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Actions-help-about-icon.png" width="30"> About
+<p float="left" align="center"> <img src="/images/earth.png" width="400">
 
+## <img align="center" src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Actions-help-about-icon.png" width="30"> About
+Our game is like an Ecology guiz and it's purpose is to teach young and old people
+about ecological concepts, such as food chains, ecosystems and the balance of nature.
+The main idea is that while the people play the game and try to quess the right answer
+they will also lern a lot about Ecology and will be more aware of their surrounding world.
+
+
+## :pencil2: Our LOGO
+<p float="left" align="center"> <img src="/images/logo.png" width="350">
 
 
 ## <img align="center" src="https://cdn-icons-png.flaticon.com/512/3708/3708519.png" width="30"> Demo of our project
@@ -36,3 +45,4 @@ To install our project on your machine you just need to clone it. This can be do
 - <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20">  Git Hub
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/640px-Git-logo.svg.png" width="20">  Git
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/640px-ISO_C%2B%2B_Logo.svg.png" width="20"> C++
+
