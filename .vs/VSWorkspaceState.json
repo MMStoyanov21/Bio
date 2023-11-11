@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Game",
-    "\\Game\\game"
+    "\\Bio",
+    "\\Bio\\Game",
+    "\\Bio\\Game\\game"
   ],
-  "SelectedNode": "\\Game\\game\\game.cpp",
+  "SelectedNode": "\\Bio\\Game\\game.sln",
   "PreviewInSolutionExplorer": false
 }
