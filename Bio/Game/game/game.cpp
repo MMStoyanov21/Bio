@@ -14,12 +14,12 @@ bool askEasy[5] = {true, true, true, true, true};
 bool askMedium[7] = {true, true, true, true, true, true, true};
 bool askHard[10] = {true, true, true, true, true, true, true, true, true, true};
 void menu();
-void display_easy();
-void display_hard();
-void display_medium();
-void displayRandomQuestion_hard();
-void displayRandomQuestion_easy();
-void displayRandomQuestion_medium();
+void displayEasy();
+void displayHard();
+void displayMedium();
+void displayRandomQuestionHard();
+void displayRandomQuestionEasy();
+void displayRandomQuestionMedium();
 void levels();
 void choice_easy() {
     int num;
@@ -30,7 +30,7 @@ void choice_easy() {
         switch (num) {
         case 1:
             cout << "You chose tho resume the game";
-            display_easy();
+            displayEasy();
             break;
         case 2:
             cout << "You chose to return to the menu";
@@ -48,7 +48,7 @@ void choice_medium() {
         switch (num) {
         case 1:
             cout << "You chose tho resume the game";
-            display_medium();
+            displayMedium();
             break;
         case 2:
             cout << "You chose to return to the menu";
@@ -66,7 +66,7 @@ void choice_hard() {
         switch (num) {
         case 1:
             cout << "You chose tho resume the game";
-            display_hard();
+            displayHard();
             break;
         case 2:
             cout << "You chose to return to the menu";
@@ -87,13 +87,13 @@ void levels() {
         cin >> choice;
         switch (choice) {
         case 1:
-            display_easy();
+            displayEasy();
             break;
         case 2:
-            display_medium();
+            displayMedium();
             break;
         case 3:
-            display_hard();
+            displayHard();
             break;
         case 0:
             menu();
@@ -103,27 +103,27 @@ void levels() {
     } while (choice != 1 && choice != 2 && choice != 3 && choice != 0);
 }
 
-void display_hard() {
+void displayHard() {
     for (int i = 0; i < 5; i++) {
         system("cls");
         cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl <<"If you want to exit enter 0"<<endl<< endl;
-        displayRandomQuestion_hard();
+        displayRandomQuestionHard();
     }
     system("color 0C");
 }
-void display_medium() {
+void displayMedium() {
     for (int i = 0; i < 5; i++) {
         system("cls");
         cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << "If you want to exit enter 0" << endl << endl;
-        displayRandomQuestion_medium();
+        displayRandomQuestionMedium();
     }
     system("color 0E");
 }
-void display_easy() {
+void displayEasy() {
     for (int i = 0; i < 5; i++) {
         system("cls");
         cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << "If you want to exit enter 0" << endl << endl;
-        displayRandomQuestion_easy();
+        displayRandomQuestionEasy();
     }
     system("color 0A");
 }
@@ -165,9 +165,9 @@ void credits() {
 
 
 
-void question_ez(string question,string a, string b, string c,string d, char correctAnswer);
-void question_mid(string question, string a, string b, string c, string d, char correctAnswer);
-void question_h(string question, string a, string b, string c, string d, char correctAnswer);
+void questionEasy(string question,string a, string b, string c,string d, char correctAnswer);
+void questionMedium(string question, string a, string b, string c, string d, char correctAnswer);
+void questionHard(string question, string a, string b, string c, string d, char correctAnswer);
 void result();
 
 void menu() {
@@ -200,7 +200,7 @@ void menu() {
 void printCenteredText()
 {
 }
-void displayRandomQuestion_easy() {
+void displayRandomQuestionEasy() {
     system("color 0A");
     srand(time(0));
     //it makes sure the number is random//
@@ -217,37 +217,37 @@ void displayRandomQuestion_easy() {
             askEasy[num] = false;
             switch (num) {
             case 0:
-                question_ez("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
+                questionEasy("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
                 break;
             case 1:
-                question_ez("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                questionEasy("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
                 break;
             case 2 :
-                question_ez("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                questionEasy("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
                 break;
             case 3:
-                question_ez("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                questionEasy("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
                 break;
             case 4:
-                question_ez("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                questionEasy("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
                 break;
             case 5:
-                question_ez("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                questionEasy("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
                 break;
             case 6:
-                question_ez("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                questionEasy("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
                 break;
             case 7:
-                question_ez("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                questionEasy("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
                 break;
             case 8:
-                question_ez("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                questionEasy("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
                 break;
             case 9:
-                question_ez("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                questionEasy("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
                 break;
             case 10:
-                question_ez("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                questionEasy("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
                 break;
 
             }
@@ -255,7 +255,7 @@ void displayRandomQuestion_easy() {
     }
     result();
 }
-void displayRandomQuestion_medium() {
+void displayRandomQuestionMedium() {
     
     system("color 06"); 
     srand(time(0));
@@ -273,37 +273,37 @@ void displayRandomQuestion_medium() {
             askMedium[num] = false;
             switch (num) {
             case 0:
-                question_mid("What is the term for the variety of life in a particular habitat?", "Biodiversity", "Ecosystem", "Community", "Population", 'a');
+                questionMedium("What is the term for the variety of life in a particular habitat?", "Biodiversity", "Ecosystem", "Community", "Population", 'a');
                 break;
             case 1:
-                question_mid("What process involves the conversion of light energy into chemical energy by plants?", "Respiration", "Photosynthesis", "Decomposition", "Transpiration", 'b');
+                questionMedium("What process involves the conversion of light energy into chemical energy by plants?", "Respiration", "Photosynthesis", "Decomposition", "Transpiration", 'b');
                 break;
             case 2:
-                question_mid("What is the primary role of decomposers in an ecosystem?", "Predation", "Nutrient cycling", "Pollination", "Competition", 'b');
+                questionMedium("What is the primary role of decomposers in an ecosystem?", "Predation", "Nutrient cycling", "Pollination", "Competition", 'b');
                 break;
             case 3:
-                question_mid("What term describes the maximum population size an environment can support?", "Carrying capacity", "Birth rate", "Density-dependent", "Limiting factor", 'a');
+                questionMedium("What term describes the maximum population size an environment can support?", "Carrying capacity", "Birth rate", "Density-dependent", "Limiting factor", 'a');
                 break;
             case 4:
-                question_mid("Which gas is a major component of Earth's atmosphere and is essential for photosynthesis?", "Nitrogen", "Oxygen", "Carbon dioxide", "Methane", 'c');
+                questionMedium("Which gas is a major component of Earth's atmosphere and is essential for photosynthesis?", "Nitrogen", "Oxygen", "Carbon dioxide", "Methane", 'c');
                 break;
             case 5:
-                question_mid("What is the term for the process by which water is lost from plant leaves?", "Precipitation", "Infiltration", "Evaporation", "Transpiration", 'd');
+                questionMedium("What is the term for the process by which water is lost from plant leaves?", "Precipitation", "Infiltration", "Evaporation", "Transpiration", 'd');
                 break;
             case 6:
-                question_mid("Which type of symbiotic relationship benefits both participating species?", "Parasitism", "Commensalism", "Mutualism", "Competition", 'c');
+                questionMedium("Which type of symbiotic relationship benefits both participating species?", "Parasitism", "Commensalism", "Mutualism", "Competition", 'c');
                 break;
             case 7:
-                question_mid("What is the main source of energy for most ecosystems?", "Wind", "Sun", "Geothermal", "Biomass", 'b');
+                questionMedium("What is the main source of energy for most ecosystems?", "Wind", "Sun", "Geothermal", "Biomass", 'b');
                 break;
             case 8:
-                question_mid("What term describes the gradual change in species composition in a given area over time?", "Succession", "Evolution", "Adaptation", "Migration", 'a');
+                questionMedium("What term describes the gradual change in species composition in a given area over time?", "Succession", "Evolution", "Adaptation", "Migration", 'a');
                 break;
             case 9:
-                question_mid("What is the term for the process by which nutrients are returned to the soil from decaying organic matter?", "Assimilation", "Nitrogen fixation", "Denitrification", "Decomposition", 'd');
+                questionMedium("What is the term for the process by which nutrients are returned to the soil from decaying organic matter?", "Assimilation", "Nitrogen fixation", "Denitrification", "Decomposition", 'd');
                 break;
             case 10:
-                question_mid("What term describes the variety of different species occupying the same habitat?", "Niche", "Habitat", "Biodiversity", "Ecosystem", 'c');
+                questionMedium("What term describes the variety of different species occupying the same habitat?", "Niche", "Habitat", "Biodiversity", "Ecosystem", 'c');
                 break;
 
             }
@@ -311,7 +311,7 @@ void displayRandomQuestion_medium() {
     }
     result();
 }
-void displayRandomQuestion_hard() {
+void displayRandomQuestionHard() {
     system("color 04");
     srand(time(0));
     //it makes sure the number is random//
@@ -328,37 +328,37 @@ void displayRandomQuestion_hard() {
             askHard[num] = false;
             switch (num) {
             case 0:
-                question_h("What is the term for a trophic cascade where the apex predator's decline leads to an increase in the population of its prey and a subsequent decrease in the next lower trophic level?", "Apex Reversal", "Trophic Overturn", "Mesopredator Release","Predator Compensation", 'c');
+                questionHard("What is the term for a trophic cascade where the apex predator's decline leads to an increase in the population of its prey and a subsequent decrease in the next lower trophic level?", "Apex Reversal", "Trophic Overturn", "Mesopredator Release","Predator Compensation", 'c');
                 break;
             case 1:
-                question_h("Name one marine organism often considered a keystone species and explain its role in maintaining ecosystem stability.", "Clownfish - regulates coral health", "Sea Otter - controls sea urchin population", "Blue Whale - maintains plankton balance", "Hammerhead Shark - regulates fish populations", 'b');
+                questionHard("Name one marine organism often considered a keystone species and explain its role in maintaining ecosystem stability.", "Clownfish - regulates coral health", "Sea Otter - controls sea urchin population", "Blue Whale - maintains plankton balance", "Hammerhead Shark - regulates fish populations", 'b');
                 break;
             case 2 :
-                question_h("Define secondary succession and provide an example of an ecosystem where it commonly occurs.", "The initial colonization of a barren area; e.g., mosses on rocks.", "The development of an ecosystem after a volcanic eruption; e.g., new island formation.", "The process of change in an ecosystem following a disturbance; e.g., regrowth after a fire.", "The gradual transformation of a forest into a grassland; e.g., savanna formation.", 'c');
+                questionHard("Define secondary succession and provide an example of an ecosystem where it commonly occurs.", "The initial colonization of a barren area; e.g., mosses on rocks.", "The development of an ecosystem after a volcanic eruption; e.g., new island formation.", "The process of change in an ecosystem following a disturbance; e.g., regrowth after a fire.", "The gradual transformation of a forest into a grassland; e.g., savanna formation.", 'c');
                 break;
             case 3:
-                question_h("Identify two criteria used to define an area as a biodiversity hotspot.", "High species richness and low human impact.", "High species endemism and significant habitat loss.", "High elevation and low precipitation.", "Large land area and high agricultural activity.", 'b');
+                questionHard("Identify two criteria used to define an area as a biodiversity hotspot.", "High species richness and low human impact.", "High species endemism and significant habitat loss.", "High elevation and low precipitation.", "Large land area and high agricultural activity.", 'b');
                 break;
             case 4:
-                question_h("Explain the role of mycorrhizal fungi in nutrient cycling in terrestrial ecosystems.", "Fix atmospheric nitrogen for plants.", "Break down dead organic matter, releasing nutrients.", "Enhance nutrient absorption by forming symbiotic relationships with plant roots.", "Facilitate nutrient runoff in aquatic ecosystems.", 'c');
+                questionHard("Explain the role of mycorrhizal fungi in nutrient cycling in terrestrial ecosystems.", "Fix atmospheric nitrogen for plants.", "Break down dead organic matter, releasing nutrients.", "Enhance nutrient absorption by forming symbiotic relationships with plant roots.", "Facilitate nutrient runoff in aquatic ecosystems.", 'c');
                 break;
             case 5:
-                question_h("In the context of biogeochemical cycles, differentiate between the terms flux and pool.", "Flux is the total amount of a substance in a specific reservoir; pool is the movement of a substance between reservoirs.", "Flux is the movement of a substance between reservoirs; pool is the total amount of a substance in a specific reservoir.", "Flux and pool are synonymous terms representing the movement of substances within ecosystems.", "Flux is the net gain of a substance in a reservoir; pool is the net loss.", 'b');
+                questionHard("In the context of biogeochemical cycles, differentiate between the terms flux and pool.", "Flux is the total amount of a substance in a specific reservoir; pool is the movement of a substance between reservoirs.", "Flux is the movement of a substance between reservoirs; pool is the total amount of a substance in a specific reservoir.", "Flux and pool are synonymous terms representing the movement of substances within ecosystems.", "Flux is the net gain of a substance in a reservoir; pool is the net loss.", 'b');
                 break;
             case 6:
-                question_h("Briefly describe one ecological impact of invasive species on native ecosystems.", "Promotion of native species diversity.", "Restoration of natural ecosystem balance.", "Competition with native species, predation, or introduction of new diseases.", "Enhancement of ecosystem resilience.", 'c');
+                questionHard("Briefly describe one ecological impact of invasive species on native ecosystems.", "Promotion of native species diversity.", "Restoration of natural ecosystem balance.", "Competition with native species, predation, or introduction of new diseases.", "Enhancement of ecosystem resilience.", 'c');
                 break;
             case 7:
-                question_h("Define the concept of an ecological niche and discuss how it differs from a habitat.", "Ecological niche is the physical location where a species lives; habitat is the role and position a species has in its environment.", "Ecological niche is the role and position a species has in its environment, including its habitat; habitat is the physical location where a species lives.", "Ecological niche and habitat are interchangeable terms.", "Ecological niche is the collective term for all the habitats within an ecosystem.", 'b');
+                questionHard("Define the concept of an ecological niche and discuss how it differs from a habitat.", "Ecological niche is the physical location where a species lives; habitat is the role and position a species has in its environment.", "Ecological niche is the role and position a species has in its environment, including its habitat; habitat is the physical location where a species lives.", "Ecological niche and habitat are interchangeable terms.", "Ecological niche is the collective term for all the habitats within an ecosystem.", 'b');
                 break;
             case 8:
-                question_h("Name two specific ways in which climate change can affect freshwater ecosystems.", "Increased precipitation and reduced evaporation.", "Elevated temperatures affecting fish migration patterns, and altered precipitation patterns leading to changes in water availability.", "Decreased atmospheric carbon dioxide levels and increased dissolved oxygen.", "Enhanced nutrient runoff and decreased algal blooms.", 'b');
+                questionHard("Name two specific ways in which climate change can affect freshwater ecosystems.", "Increased precipitation and reduced evaporation.", "Elevated temperatures affecting fish migration patterns, and altered precipitation patterns leading to changes in water availability.", "Decreased atmospheric carbon dioxide levels and increased dissolved oxygen.", "Enhanced nutrient runoff and decreased algal blooms.", 'b');
                 break;
             case 9:
-                question_h("According to the theory of island biogeography, how does the size and distance of an island influence species diversity?", "Larger islands and shorter distances result in lower species diversity.", "Smaller islands and shorter distances result in higher species diversity.", "Larger islands and greater distances result in higher species diversity.", "Smaller islands and greater distances result in lower species diversity.", 'c');
+                questionHard("According to the theory of island biogeography, how does the size and distance of an island influence species diversity?", "Larger islands and shorter distances result in lower species diversity.", "Smaller islands and shorter distances result in higher species diversity.", "Larger islands and greater distances result in higher species diversity.", "Smaller islands and greater distances result in lower species diversity.", 'c');
                 break;
             case 10:
-                question_h("Identify the major factors influencing the distribution of biomes on Earth and explain how these factors contribute to the diversity of ecosystems.", "Latitude and altitude", "Wind patterns and ocean currents", "Soil composition and vegetation types", "All of the above", 'd');
+                questionHard("Identify the major factors influencing the distribution of biomes on Earth and explain how these factors contribute to the diversity of ecosystems.", "Latitude and altitude", "Wind patterns and ocean currents", "Soil composition and vegetation types", "All of the above", 'd');
                 break;
 
             }
@@ -426,7 +426,7 @@ void result()
         }
     }
 }
-void question_ez(string question, string a, string b, string c, string d, char correctAnswer) {
+void questionEasy(string question, string a, string b, string c, string d, char correctAnswer) {
     
         cout << question << endl << endl << endl;
         cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d << endl;
@@ -445,10 +445,10 @@ void question_ez(string question, string a, string b, string c, string d, char c
             correct -= 5;
         }
         qNo++;
-        display_easy();
+        displayEasy();
     
 }
-void question_mid(string question, string a, string b, string c, string d, char correctAnswer) {
+void questionMedium(string question, string a, string b, string c, string d, char correctAnswer) {
     cout << question << endl << endl << endl;
     cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d << endl;
     char answer;
@@ -466,9 +466,9 @@ void question_mid(string question, string a, string b, string c, string d, char 
         correct -= 5;
     }
     qNo++;
-    display_medium();
+    displayMedium();
 }
-void question_h(string question, string a, string b, string c, string d, char correctAnswer) {
+void questionHard(string question, string a, string b, string c, string d, char correctAnswer) {
     cout << question << endl << endl << endl;
     cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d << endl;
     char answer;
@@ -486,7 +486,7 @@ void question_h(string question, string a, string b, string c, string d, char co
         correct -= 5;
     }
     qNo++;
-    display_hard();
+    displayHard();
 }
 
 
