@@ -329,37 +329,37 @@ void displayRandomQuestion_hard() {
             askHard[num] = false;
             switch (num) {
             case 0:
-                question_h("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
+                question_h("What is the term for a trophic cascade where the apex predator's decline leads to an increase in the population of its prey and a subsequent decrease in the next lower trophic level?", "Apex Reversal", "Trophic Overturn", "Mesopredator Release","Predator Compensation", 'c');
                 break;
             case 1:
-                question_h("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                question_h("Name one marine organism often considered a keystone species and explain its role in maintaining ecosystem stability.", "Clownfish - regulates coral health", "Sea Otter - controls sea urchin population", "Blue Whale - maintains plankton balance", "Hammerhead Shark - regulates fish populations", 'b');
                 break;
             case 2 :
-                question_h("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                question_h("Define secondary succession and provide an example of an ecosystem where it commonly occurs.", "The initial colonization of a barren area; e.g., mosses on rocks.", "The development of an ecosystem after a volcanic eruption; e.g., new island formation.", "The process of change in an ecosystem following a disturbance; e.g., regrowth after a fire.", "The gradual transformation of a forest into a grassland; e.g., savanna formation.", 'c');
                 break;
             case 3:
-                question_h("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                question_h("Identify two criteria used to define an area as a biodiversity hotspot.", "High species richness and low human impact.", "High species endemism and significant habitat loss.", "High elevation and low precipitation.", "Large land area and high agricultural activity.", 'b');
                 break;
             case 4:
-                question_h("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                question_h("Explain the role of mycorrhizal fungi in nutrient cycling in terrestrial ecosystems.", "Fix atmospheric nitrogen for plants.", "Break down dead organic matter, releasing nutrients.", "Enhance nutrient absorption by forming symbiotic relationships with plant roots.", "Facilitate nutrient runoff in aquatic ecosystems.", 'c');
                 break;
             case 5:
-                question_h("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                question_h("In the context of biogeochemical cycles, differentiate between the terms flux and pool.", "Flux is the total amount of a substance in a specific reservoir; pool is the movement of a substance between reservoirs.", "Flux is the movement of a substance between reservoirs; pool is the total amount of a substance in a specific reservoir.", "Flux and pool are synonymous terms representing the movement of substances within ecosystems.", "Flux is the net gain of a substance in a reservoir; pool is the net loss.", 'b');
                 break;
             case 6:
-                question_h("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                question_h("Briefly describe one ecological impact of invasive species on native ecosystems.", "Promotion of native species diversity.", "Restoration of natural ecosystem balance.", "Competition with native species, predation, or introduction of new diseases.", "Enhancement of ecosystem resilience.", 'c');
                 break;
             case 7:
-                question_h("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                question_h("Define the concept of an ecological niche and discuss how it differs from a habitat.", "Ecological niche is the physical location where a species lives; habitat is the role and position a species has in its environment.", "Ecological niche is the role and position a species has in its environment, including its habitat; habitat is the physical location where a species lives.", "Ecological niche and habitat are interchangeable terms.", "Ecological niche is the collective term for all the habitats within an ecosystem.", 'b');
                 break;
             case 8:
-                question_h("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                question_h("Name two specific ways in which climate change can affect freshwater ecosystems.", "Increased precipitation and reduced evaporation.", "Elevated temperatures affecting fish migration patterns, and altered precipitation patterns leading to changes in water availability.", "Decreased atmospheric carbon dioxide levels and increased dissolved oxygen.", "Enhanced nutrient runoff and decreased algal blooms.", 'b');
                 break;
             case 9:
-                question_h("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                question_h("According to the theory of island biogeography, how does the size and distance of an island influence species diversity?", "Larger islands and shorter distances result in lower species diversity.", "Smaller islands and shorter distances result in higher species diversity.", "Larger islands and greater distances result in higher species diversity.", "Smaller islands and greater distances result in lower species diversity.", 'c');
                 break;
             case 10:
-                question_h("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                question_h("Identify the major factors influencing the distribution of biomes on Earth and explain how these factors contribute to the diversity of ecosystems.", "Latitude and altitude", "Wind patterns and ocean currents", "Soil composition and vegetation types", "All of the above", 'd');
                 break;
 
             }
