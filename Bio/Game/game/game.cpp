@@ -273,38 +273,37 @@ void displayRandomQuestion_medium() {
             askMedium[num] = false;
             switch (num) {
             case 0:
-                question_mid("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%", "20%", 'b');
+                question_mid("What is the term for the variety of life in a particular habitat?", "Biodiversity", "Ecosystem", "Community", "Population", 'a');
                 break;
             case 1:
-                question_mid("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                question_mid("What process involves the conversion of light energy into chemical energy by plants?", "Respiration", "Photosynthesis", "Decomposition", "Transpiration", 'b');
                 break;
             case 2:
-                question_mid("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                question_mid("What is the primary role of decomposers in an ecosystem?", "Predation", "Nutrient cycling", "Pollination", "Competition", 'b');
                 break;
             case 3:
-                question_mid("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                question_mid("What term describes the maximum population size an environment can support?", "Carrying capacity", "Birth rate", "Density-dependent", "Limiting factor", 'a');
                 break;
             case 4:
-                question_mid("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                question_mid("Which gas is a major component of Earth's atmosphere and is essential for photosynthesis?", "Nitrogen", "Oxygen", "Carbon dioxide", "Methane", 'c');
                 break;
             case 5:
-                question_mid("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                question_mid("What is the term for the process by which water is lost from plant leaves?", "Precipitation", "Infiltration", "Evaporation", "Transpiration", 'd');
                 break;
             case 6:
-                question_mid("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                question_mid("Which type of symbiotic relationship benefits both participating species?", "Parasitism", "Commensalism", "Mutualism", "Competition", 'c');
                 break;
             case 7:
-                question_mid("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                question_mid("What is the main source of energy for most ecosystems?", "Wind", "Sun", "Geothermal", "Biomass", 'b');
                 break;
             case 8:
-
-                question_mid("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                question_mid("What term describes the gradual change in species composition in a given area over time?", "Succession", "Evolution", "Adaptation", "Migration", 'a');
                 break;
             case 9:
-                question_mid("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                question_mid("What is the term for the process by which nutrients are returned to the soil from decaying organic matter?", "Assimilation", "Nitrogen fixation", "Denitrification", "Decomposition", 'd');
                 break;
             case 10:
-                question_mid("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                question_mid("What term describes the variety of different species occupying the same habitat?", "Niche", "Habitat", "Biodiversity", "Ecosystem", 'c');
                 break;
 
             }
