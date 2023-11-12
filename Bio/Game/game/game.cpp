@@ -21,7 +21,7 @@ void displayRandomQuestionHard();
 void displayRandomQuestionEasy();
 void displayRandomQuestionMedium();
 void levels();
-void choice_easy() {
+void choiceEasy() {
     int num;
     do {
         system("cls");
@@ -39,7 +39,7 @@ void choice_easy() {
         }
     } while (num != 1 && num != 2);
 }
-void choice_medium() {
+void choiceMedium() {
     int num;
     do {
         system("cls");
@@ -57,7 +57,7 @@ void choice_medium() {
         }
     } while (num != 1 && num != 2);
 }
-void choice_hard() {
+void choiceHard() {
     int num;
     do {
         system("cls");
@@ -168,7 +168,9 @@ void credits() {
 void questionEasy(string question,string a, string b, string c,string d, char correctAnswer);
 void questionMedium(string question, string a, string b, string c, string d, char correctAnswer);
 void questionHard(string question, string a, string b, string c, string d, char correctAnswer);
-void result();
+void resultEasy();
+void resultMedium();
+void resultHard();
 
 void menu() {
     int choice;
@@ -253,7 +255,7 @@ void displayRandomQuestionEasy() {
             }
         }
     }
-    result();
+    resultEasy();
 }
 void displayRandomQuestionMedium() {
     
@@ -309,7 +311,7 @@ void displayRandomQuestionMedium() {
             }
         }
     }
-    result();
+    resultMedium();
 }
 void displayRandomQuestionHard() {
     system("color 04");
@@ -364,9 +366,127 @@ void displayRandomQuestionHard() {
             }
         }
     }
-    result();
+    resultHard();
 }
-void result()
+void resultEasy()
+{
+    int back;
+    system("cls");
+    if (correct == 50)
+    {
+        cout << "                                                                                    ,---,    ,---,    ,---, " << endl;
+        cout << "                                                                                 ,`--.' | ,`--.' | ,`--.' | " << endl;
+        cout << "                                                                                 |   :  : |   :  : |   :  : " << endl;
+        cout << "        ,---,                                                                    '   '  ; '   '  ; '   '  ; " << endl;
+        cout << "       /_ ./|   ,---.           ,--,                  .---.   ,---.        ,---, |   |  | |   |  | |   |  | " << endl;
+        cout << " ,---, |  ' :  '   ,'\\        ,'_ /|                 /. ./|  '   ,'\\   ,-+-. /  |'   :  ; '   :  ; '   :  ; " << endl;
+        cout << "/___/ \\.  : | /   /   |  .--. |  | :              .-'-. ' | /   /   | ,--.'|'   ||   |  ' |   |  ' |   |  ' " << endl;
+        cout << " .  \\  \\ ,' '.   ; ,. :,'_ /| :  . |             /___/ \\: |.   ; ,. :|   |  ,'' |'   :    | '   :  | ' :  | " << endl;
+        cout << "  \\  ;  `  ,''   | |: :|  ' | |  . .          .-'.. '   ' .'   | |: :|   | /  | |;   |  ; ;   |  ; ;   |  ; " << endl;
+        cout << "   \\  \\    ' '   | .; :|  | ' |  | |         /___/ \\:     ''   | .; :|   | |  | |`---'. | `---'. | `---'. | " << endl;
+        cout << "    '  \\   | |   :    |:  | : ;  ; |         .   \\  ' .\\   |   :    ||   | |  |/  `--..`;  `--..`;  `--..`; " << endl;
+        cout << "     \\  ;  ;  \\   \\  / '  :  `--'   \\         \\   \\   ' \\ | \\   \\  / |   | |--'  .--,_    .--,_    .--,_    " << endl;
+        cout << "      :  \\  \\  `----'  :  ,      .-./          \\   \\  |--   `--- - ' |   |/      |    |`. |    |`. |    |`. " << endl;
+        cout << "       \\  ' ;           `--`----'               \\   \\ |              '---'       `-- -`, ;`-- -`, ;`-- -`, ;" << endl;
+        cout << "        `--`                                     '---'                             '---`'   '-- - `'   '---`" << endl;
+        cout << "If you want to exit the page enter 0: ";
+        cin >> back;
+        switch (back)
+        {
+        case 0:
+            menu();
+            break;
+        }
+    }
+    else
+    {
+        cout << "Total questions = " << qNo - 1 << endl;
+        cout << "Your points = " << correct << endl;
+        cout << "Wrong answers = " << wrong << endl;
+        cout << "        ,----,                                                                                                     " << endl;
+        cout << "      ,/   .`|                                                                                         ___    ,---," << endl;
+        cout << "    ,`   .'  :                                                                                        /  .\\ ,---.'|" << endl;
+        cout << "  ;    ;     /                                                             ,--,                       \\  ; ||   | :" << endl;
+        cout << ".'___,/    ,' __  ,-.                                                    ,--.'|         ,---,          `--' '   : '" << endl;
+        cout << "|    :     |,' ,'/ /|                              ,----._,.             |  |,      ,-+-. /  |              :   | |" << endl;
+        cout << ";    |.';  ;'  | |' |   .--,            ,--.--.   /   /  ' /   ,--.--.   `--'_     ,--.'|'   |              |   ' :" << endl;
+        cout << "`----'  |  ||  |   ,' /_ ./|           /       \\ |   :     |  /       \\  ,' ,'|   |   |  ,'' |              ;   ; |" << endl;
+        cout << "    '   :  ;'  :  /, ' , ' :          .--.  .-. ||   | .\\  . .--.  .-. | '  | |   |   | /  | |              '   | '" << endl;
+        cout << "    |   |  '|  | '/___/ \\: |           \\__\\/: . ..   ; ';  |  \\__\\/: . . |  | :   |   | |  | |              |   | :" << endl;
+        cout << "    '   :  |;  : | .  \\  ' |           ,' .--.; | '   .   . |  ,' .--.; | '  : | __ |   | |  |/          ___  '   :" << endl;
+        cout << "   ;   |.' |  , ;  \\  ;   :          /  /  ,.  | `---`-'| | /  /  ,.  | |  | '.'||   | |--'          /  .\\ |   | | " << endl;
+        cout << "    '---'    ---'    \\  \\  ;         ;  :   .'   \\.'__/\\_: |;  :   .'   \\;  :    ;|   |/              \\  ; |;   : ;" << endl;
+        cout << "                      :  \\  \\        |  ,     .-./|   :    :|  ,     .-./|  ,   / '---'                `--' | , /  " << endl;
+        cout << "                       \\  ' ;         `--`---'     \\   \\  /  `--`---'     ---`-'                            '---'  " << endl;
+        cout << "If you want to exit enter 0: ";
+        cin >> back;
+        switch (back)
+        {
+        case 0:
+            menu();
+            break;
+        }
+    }
+}void resultMedium()
+{
+    int back;
+    system("cls");
+    if (correct == 70)
+    {
+        cout << "                                                                                    ,---,    ,---,    ,---, " << endl;
+        cout << "                                                                                 ,`--.' | ,`--.' | ,`--.' | " << endl;
+        cout << "                                                                                 |   :  : |   :  : |   :  : " << endl;
+        cout << "        ,---,                                                                    '   '  ; '   '  ; '   '  ; " << endl;
+        cout << "       /_ ./|   ,---.           ,--,                  .---.   ,---.        ,---, |   |  | |   |  | |   |  | " << endl;
+        cout << " ,---, |  ' :  '   ,'\\        ,'_ /|                 /. ./|  '   ,'\\   ,-+-. /  |'   :  ; '   :  ; '   :  ; " << endl;
+        cout << "/___/ \\.  : | /   /   |  .--. |  | :              .-'-. ' | /   /   | ,--.'|'   ||   |  ' |   |  ' |   |  ' " << endl;
+        cout << " .  \\  \\ ,' '.   ; ,. :,'_ /| :  . |             /___/ \\: |.   ; ,. :|   |  ,'' |'   :    | '   :  | ' :  | " << endl;
+        cout << "  \\  ;  `  ,''   | |: :|  ' | |  . .          .-'.. '   ' .'   | |: :|   | /  | |;   |  ; ;   |  ; ;   |  ; " << endl;
+        cout << "   \\  \\    ' '   | .; :|  | ' |  | |         /___/ \\:     ''   | .; :|   | |  | |`---'. | `---'. | `---'. | " << endl;
+        cout << "    '  \\   | |   :    |:  | : ;  ; |         .   \\  ' .\\   |   :    ||   | |  |/  `--..`;  `--..`;  `--..`; " << endl;
+        cout << "     \\  ;  ;  \\   \\  / '  :  `--'   \\         \\   \\   ' \\ | \\   \\  / |   | |--'  .--,_    .--,_    .--,_    " << endl;
+        cout << "      :  \\  \\  `----'  :  ,      .-./          \\   \\  |--   `--- - ' |   |/      |    |`. |    |`. |    |`. " << endl;
+        cout << "       \\  ' ;           `--`----'               \\   \\ |              '---'       `-- -`, ;`-- -`, ;`-- -`, ;" << endl;
+        cout << "        `--`                                     '---'                             '---`'   '-- - `'   '---`" << endl;
+        cout << "If you want to exit the page enter 0: ";
+        cin >> back;
+        switch (back)
+        {
+        case 0:
+            menu();
+            break;
+        }
+    }
+    else
+    {
+        cout << "Total questions = " << qNo - 1 << endl;
+        cout << "Your points = " << correct << endl;
+        cout << "Wrong answers = " << wrong << endl;
+        cout << "        ,----,                                                                                                     " << endl;
+        cout << "      ,/   .`|                                                                                         ___    ,---," << endl;
+        cout << "    ,`   .'  :                                                                                        /  .\\ ,---.'|" << endl;
+        cout << "  ;    ;     /                                                             ,--,                       \\  ; ||   | :" << endl;
+        cout << ".'___,/    ,' __  ,-.                                                    ,--.'|         ,---,          `--' '   : '" << endl;
+        cout << "|    :     |,' ,'/ /|                              ,----._,.             |  |,      ,-+-. /  |              :   | |" << endl;
+        cout << ";    |.';  ;'  | |' |   .--,            ,--.--.   /   /  ' /   ,--.--.   `--'_     ,--.'|'   |              |   ' :" << endl;
+        cout << "`----'  |  ||  |   ,' /_ ./|           /       \\ |   :     |  /       \\  ,' ,'|   |   |  ,'' |              ;   ; |" << endl;
+        cout << "    '   :  ;'  :  /, ' , ' :          .--.  .-. ||   | .\\  . .--.  .-. | '  | |   |   | /  | |              '   | '" << endl;
+        cout << "    |   |  '|  | '/___/ \\: |           \\__\\/: . ..   ; ';  |  \\__\\/: . . |  | :   |   | |  | |              |   | :" << endl;
+        cout << "    '   :  |;  : | .  \\  ' |           ,' .--.; | '   .   . |  ,' .--.; | '  : | __ |   | |  |/          ___  '   :" << endl;
+        cout << "   ;   |.' |  , ;  \\  ;   :          /  /  ,.  | `---`-'| | /  /  ,.  | |  | '.'||   | |--'          /  .\\ |   | | " << endl;
+        cout << "    '---'    ---'    \\  \\  ;         ;  :   .'   \\.'__/\\_: |;  :   .'   \\;  :    ;|   |/              \\  ; |;   : ;" << endl;
+        cout << "                      :  \\  \\        |  ,     .-./|   :    :|  ,     .-./|  ,   / '---'                `--' | , /  " << endl;
+        cout << "                       \\  ' ;         `--`---'     \\   \\  /  `--`---'     ---`-'                            '---'  " << endl;
+        cout << "If you want to exit enter 0: ";
+        cin >> back;
+        switch (back)
+        {
+        case 0:
+            menu();
+            break;
+        }
+    }
+}void resultHard()
 {
     int back;
     system("cls");
@@ -438,9 +558,9 @@ void questionEasy(string question, string a, string b, string c, string d, char 
 
         }
         if (answer == '0') {
-            choice_easy();
+            choiceEasy();
         }
-        else {
+        if (answer != correctAnswer) {
             wrong++;
             correct -= 5;
         }
@@ -459,9 +579,9 @@ void questionMedium(string question, string a, string b, string c, string d, cha
 
     }
     if (answer == '0') {
-        choice_medium();
+        choiceMedium();
     }
-    else {
+    if(answer != correctAnswer) {
         wrong++;
         correct -= 5;
     }
@@ -479,7 +599,7 @@ void questionHard(string question, string a, string b, string c, string d, char 
 
     }
     if (answer == '0') {
-        choice_hard();
+        choiceHard();
     }
     if(answer != correctAnswer) {
         wrong++;
