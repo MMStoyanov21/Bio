@@ -10,7 +10,9 @@ using namespace std;
 int qNo = 1;
 int correct = 0;
 int wrong = 0;
-bool ask[11] = {true, true, true, true, true, true, true, true, true, true, true};
+bool askEasy[5] = {true, true, true, true, true};
+bool askMedium[7] = {true, true, true, true, true, true, true};
+bool askHard[10] = {true, true, true, true, true, true, true, true, true, true};
 void menu();
 void display_easy();
 void display_hard();
@@ -18,6 +20,61 @@ void display_medium();
 void displayRandomQuestion_hard();
 void displayRandomQuestion_easy();
 void displayRandomQuestion_medium();
+void levels();
+void choice_easy() {
+    int num;
+    do {
+        system("cls");
+        cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
+        cin >> num;
+        switch (num) {
+        case 1:
+            cout << "You chose tho resume the game";
+            display_easy();
+            break;
+        case 2:
+            cout << "You chose to return to the menu";
+            levels();
+            break;
+        }
+    } while (num != 1 && num != 2);
+}
+void choice_medium() {
+    int num;
+    do {
+        system("cls");
+        cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
+        cin >> num;
+        switch (num) {
+        case 1:
+            cout << "You chose tho resume the game";
+            display_medium();
+            break;
+        case 2:
+            cout << "You chose to return to the menu";
+            levels();
+            break;
+        }
+    } while (num != 1 && num != 2);
+}
+void choice_hard() {
+    int num;
+    do {
+        system("cls");
+        cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
+        cin >> num;
+        switch (num) {
+        case 1:
+            cout << "You chose tho resume the game";
+            display_hard();
+            break;
+        case 2:
+            cout << "You chose to return to the menu";
+            levels();
+            break;
+        }
+    } while (num != 1 && num != 2);
+}
 void levels() {
     int choice;
     do {
@@ -108,7 +165,9 @@ void credits() {
 
 
 
-void question(string question,string a, string b, string c,string d, char correctAnswer);
+void question_ez(string question,string a, string b, string c,string d, char correctAnswer);
+void question_mid(string question, string a, string b, string c, string d, char correctAnswer);
+void question_h(string question, string a, string b, string c, string d, char correctAnswer);
 void result();
 
 void menu() {
@@ -147,48 +206,48 @@ void displayRandomQuestion_easy() {
     //it makes sure the number is random//
     bool isQuestionRemaining = false;
     for (int i = 0; i < 10; i++) {
-        if (ask[i]) {
+        if (askEasy[i]) {
             isQuestionRemaining = true;
             break;
         }
     }
     while (isQuestionRemaining) {
         int num = rand() % 10;
-        if (ask[num]) {
-            ask[num] = false;
+        if (askEasy[num]) {
+            askEasy[num] = false;
             switch (num) {
             case 0:
-                question("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
+                question_ez("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
                 break;
             case 1:
-                question("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                question_ez("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
                 break;
             case 2 :
-                question("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                question_ez("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
                 break;
             case 3:
-                question("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                question_ez("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
                 break;
             case 4:
-                question("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                question_ez("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
                 break;
             case 5:
-                question("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                question_ez("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
                 break;
             case 6:
-                question("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                question_ez("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
                 break;
             case 7:
-                question("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                question_ez("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
                 break;
             case 8:
-                question("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                question_ez("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
                 break;
             case 9:
-                question("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                question_ez("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
                 break;
             case 10:
-                question("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                question_ez("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
                 break;
 
             }
@@ -203,48 +262,49 @@ void displayRandomQuestion_medium() {
     //it makes sure the number is random//
     bool isQuestionRemaining = false;
     for (int i = 0; i < 10; i++) {
-        if (ask[i]) {
+        if (askMedium[i]) {
             isQuestionRemaining = true;
             break;
         }
     }
     while (isQuestionRemaining) {
         int num = rand() % 10;
-        if (ask[num]) {
-            ask[num] = false;
+        if (askMedium[num]) {
+            askMedium[num] = false;
             switch (num) {
             case 0:
-                question("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%", "20%", 'b');
+                question_mid("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%", "20%", 'b');
                 break;
             case 1:
-                question("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                question_mid("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
                 break;
             case 2:
-                question("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                question_mid("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
                 break;
             case 3:
-                question("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                question_mid("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
                 break;
             case 4:
-                question("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                question_mid("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
                 break;
             case 5:
-                question("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                question_mid("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
                 break;
             case 6:
-                question("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                question_mid("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
                 break;
             case 7:
-                question("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                question_mid("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
                 break;
             case 8:
-                question("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+
+                question_mid("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
                 break;
             case 9:
-                question("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                question_mid("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
                 break;
             case 10:
-                question("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                question_mid("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
                 break;
 
             }
@@ -258,48 +318,48 @@ void displayRandomQuestion_hard() {
     //it makes sure the number is random//
     bool isQuestionRemaining = false;
     for (int i = 0; i < 10; i++) {
-        if (ask[i]) {
+        if (askHard[i]) {
             isQuestionRemaining = true;
             break;
         }
     }
     while (isQuestionRemaining) {
         int num = rand() % 10;
-        if (ask[num]) {
-            ask[num] = false;
+        if (askHard[num]) {
+            askHard[num] = false;
             switch (num) {
             case 0:
-                question("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
+                question_h("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
                 break;
             case 1:
-                question("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                question_h("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
                 break;
             case 2 :
-                question("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                question_h("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
                 break;
             case 3:
-                question("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                question_h("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
                 break;
             case 4:
-                question("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                question_h("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
                 break;
             case 5:
-                question("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                question_h("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
                 break;
             case 6:
-                question("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                question_h("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
                 break;
             case 7:
-                question("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                question_h("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
                 break;
             case 8:
-                question("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                question_h("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
                 break;
             case 9:
-                question("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                question_h("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
                 break;
             case 10:
-                question("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                question_h("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
                 break;
 
             }
@@ -367,25 +427,67 @@ void result()
         }
     }
 }
-void question(string question, string a, string b, string c, string d, char correctAnswer) {
+void question_ez(string question, string a, string b, string c, string d, char correctAnswer) {
+    
+        cout << question << endl << endl << endl;
+        cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d << endl;
+        char answer;
+        cout << endl << endl << "Please input your answer: ";
+        cin >> answer;
+        if (answer == correctAnswer) {
+            correct += 10;
+
+        }
+        if (answer == '0') {
+            choice_easy();
+        }
+        else {
+            wrong++;
+            correct -= 5;
+        }
+        qNo++;
+        display_easy();
+    
+}
+void question_mid(string question, string a, string b, string c, string d, char correctAnswer) {
     cout << question << endl << endl << endl;
-    cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d<<endl;
+    cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d << endl;
     char answer;
-    cout <<endl<<endl<< "Please input your answer: ";
+    cout << endl << endl << "Please input your answer: ";
     cin >> answer;
     if (answer == correctAnswer) {
-        correct+=10;
+        correct += 10;
 
     }
     if (answer == '0') {
-        menu();
+        choice_medium();
     }
     else {
         wrong++;
         correct -= 5;
     }
     qNo++;
-    display_easy();
+    display_medium();
+}
+void question_h(string question, string a, string b, string c, string d, char correctAnswer) {
+    cout << question << endl << endl << endl;
+    cout << "a) " << a << " b) " << b << endl << "c) " << c << " d) " << d << endl;
+    char answer;
+    cout << endl << endl << "Please input your answer: ";
+    cin >> answer;
+    if (answer == correctAnswer) {
+        correct += 10;
+
+    }
+    if (answer == '0') {
+        choice_hard();
+    }
+    else {
+        wrong++;
+        correct -= 5;
+    }
+    qNo++;
+    display_hard();
 }
 
 
