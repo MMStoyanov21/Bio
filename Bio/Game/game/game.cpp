@@ -482,7 +482,7 @@ void question_h(string question, string a, string b, string c, string d, char co
     if (answer == '0') {
         choice_hard();
     }
-    else {
+    if(answer != correctAnswer) {
         wrong++;
         correct -= 5;
     }
