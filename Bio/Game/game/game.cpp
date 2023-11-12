@@ -49,23 +49,23 @@ void levels() {
 void display_hard() {
     for (int i = 0; i < 5; i++) {
         system("cls");
-        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl <<"If you want to exit enter 0"<<endl<< endl;
         displayRandomQuestion_hard();
     }
-    system("color 04");
+    system("color 0C");
 }
 void display_medium() {
     for (int i = 0; i < 5; i++) {
         system("cls");
-        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << "If you want to exit enter 0" << endl << endl;
         displayRandomQuestion_medium();
     }
-    system("color 06");
+    system("color 0E");
 }
 void display_easy() {
     for (int i = 0; i < 5; i++) {
         system("cls");
-        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << "If you want to exit enter 0" << endl << endl;
         displayRandomQuestion_easy();
     }
     system("color 0A");
@@ -377,6 +377,9 @@ void question(string question, string a, string b, string c, string d, char corr
         correct+=10;
 
     }
+    if (answer == '0') {
+        menu();
+    }
     else {
         wrong++;
         correct -= 5;
@@ -385,11 +388,10 @@ void question(string question, string a, string b, string c, string d, char corr
     display_easy();
 }
 
+
 int main()
 {
-    
+   
     system("color 0B");
-    menu();
-    
-    
+    menu();   
 }
