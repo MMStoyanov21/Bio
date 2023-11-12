@@ -12,6 +12,66 @@ int correct = 0;
 int wrong = 0;
 bool ask[11] = {true, true, true, true, true, true, true, true, true, true, true};
 void menu();
+void display_easy();
+void display_hard();
+void display_medium();
+void displayRandomQuestion_hard();
+void displayRandomQuestion_easy();
+void displayRandomQuestion_medium();
+void levels() {
+    int choice;
+    do {
+        system("cls");
+        cout << "1 - EASY" << endl;
+        cout << "2 - MEDIUM" << endl;
+        cout << "3 - HARD" << endl;
+        cout << "0 - RETURN TO MENU" << endl;
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            display_easy();
+            break;
+        case 2:
+            display_medium();
+            break;
+        case 3:
+            display_hard();
+            break;
+        case 0:
+            menu();
+            break;
+        }
+
+    } while (choice != 1 && choice != 2 && choice != 3 && choice != 0);
+}
+
+void display_hard() {
+    for (int i = 0; i < 5; i++) {
+        system("cls");
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        displayRandomQuestion_hard();
+    }
+    system("color 04");
+}
+void display_medium() {
+    for (int i = 0; i < 5; i++) {
+        system("cls");
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        displayRandomQuestion_medium();
+    }
+    system("color 06");
+}
+void display_easy() {
+    for (int i = 0; i < 5; i++) {
+        system("cls");
+        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
+        displayRandomQuestion_easy();
+    }
+    system("color 0A");
+}
+
+void menu();
 void rules() {
     system("cls");
     int back;
@@ -25,6 +85,7 @@ void rules() {
             break;
         }
     } while (back != 0);
+    system("color 0B");
 
     
 }
@@ -40,24 +101,26 @@ void credits() {
             break;
         }
     } while (back != 0);
+    system("color 0B");
     
 }
  
 
-void displayRandomQuestion();
-void display();
+
+
 void question(string question,string a, string b, string c,string d, char correctAnswer);
 void result();
+
 void menu() {
     int choice;
     do {
         system("CLS");
-        cout << "1-PLAY" << endl << "2-RULES" << endl << "3-CREDITS" << endl << "4-EXIT" << endl << endl << "Enter your choice: ";
+        cout << "1-LEVELS" << endl << "2-RULES" << endl << "3-CREDITS" << endl << "4-EXIT" << endl << endl << "Enter your choice: ";
         cin >> choice;
         switch (choice) {
         case 1:
             cout << "You chose to play.\n";
-            display();
+            levels();
             break;
         case 2:
             cout << "Here are the rules:\n";
@@ -72,18 +135,125 @@ void menu() {
         default: continue;
         }
     } while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
+    
 }
-void display() {
-    for(int i = 0;i<5;i++){
-        system("cls");
-        cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << endl;
-        displayRandomQuestion();
-    }
-}
+
 void printCenteredText()
 {
 }
-void displayRandomQuestion() {
+void displayRandomQuestion_easy() {
+    system("color 0A");
+    srand(time(0));
+    //it makes sure the number is random//
+    bool isQuestionRemaining = false;
+    for (int i = 0; i < 10; i++) {
+        if (ask[i]) {
+            isQuestionRemaining = true;
+            break;
+        }
+    }
+    while (isQuestionRemaining) {
+        int num = rand() % 10;
+        if (ask[num]) {
+            ask[num] = false;
+            switch (num) {
+            case 0:
+                question("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%","20%", 'b');
+                break;
+            case 1:
+                question("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                break;
+            case 2 :
+                question("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                break;
+            case 3:
+                question("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                break;
+            case 4:
+                question("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                break;
+            case 5:
+                question("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                break;
+            case 6:
+                question("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                break;
+            case 7:
+                question("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                break;
+            case 8:
+                question("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                break;
+            case 9:
+                question("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                break;
+            case 10:
+                question("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                break;
+
+            }
+        }
+    }
+    result();
+}
+void displayRandomQuestion_medium() {
+    
+    system("color 06"); 
+    srand(time(0));
+    //it makes sure the number is random//
+    bool isQuestionRemaining = false;
+    for (int i = 0; i < 10; i++) {
+        if (ask[i]) {
+            isQuestionRemaining = true;
+            break;
+        }
+    }
+    while (isQuestionRemaining) {
+        int num = rand() % 10;
+        if (ask[num]) {
+            ask[num] = false;
+            switch (num) {
+            case 0:
+                question("The amount of energy that is passed from one organism to the next in a food chain is ?", "5%", "10%", "15%", "20%", 'b');
+                break;
+            case 1:
+                question("In the following food chain, which organism is the secondary consumer? grass ------> rabbit -------> snake ------> hawk ", "Grass", "Rabbit", "Snake", "Hawk", 'c');
+                break;
+            case 2:
+                question("The term nitrogen fixation refers to: ", "The process that turns nitrates and nitrites into nitrogen.", "The process where bacteria turns nitrogen into a form that plants can use (ammonia).", "The process where nitrogen gas in the atmosphere is converted to nitrates.", "None of the above.", 'b');
+                break;
+            case 3:
+                question("Which of the following is an abiotic factor in an ecosystem? ", "Bird", "Tree", "Rock", "Deer", 'c');
+                break;
+            case 4:
+                question("Sea anemones contain a venom that is used to sting and paralyze their prey. The clownfish contains an enzyme in their scales that makes them immune to the venom. This allows them to freely live in the sea anemone without being harmed. This is an example of what type of relationship? ", "Predator-prey", "Mutualism", "Commensalism", "Parasitism", 'c');
+                break;
+            case 5:
+                question("The ultimate source of energy for all organisms in life is", "Water", "Oxygen", "Nitrogen", "The sun", 'd');
+                break;
+            case 6:
+                question("The release of water vapor from the leaves of trees is called ", "Evaporation", "Precipitation", "Condensation", "Transpiration", 'd');
+                break;
+            case 7:
+                question("Mushrooms and other fungi are responsible for breaking down dead organic matter. In the ecosystem, they are called ", "Producers", "Consumers", "Decomposers", "Scavengers", 'c');
+                break;
+            case 8:
+                question("All of the following are ways that we can protect the biosphere except:", "Recycling", "Protecting waterways from the dumping of illegal chemicals.", "Burning fossil fuels.", "Decreasing the process of deforestation.", 'c');
+                break;
+            case 9:
+                question("Which of the following organisms is an autotroph? ", "Algae", "A bear", "A cheetah", "A fish", 'a');
+                break;
+            case 10:
+                question("Which of the following cannot be recycled? ", "Nitrogen", "Carbon", "Water", "Energy", 'd');
+                break;
+
+            }
+        }
+    }
+    result();
+}
+void displayRandomQuestion_hard() {
+    system("color 04");
     srand(time(0));
     //it makes sure the number is random//
     bool isQuestionRemaining = false;
@@ -212,13 +382,13 @@ void question(string question, string a, string b, string c, string d, char corr
         correct -= 5;
     }
     qNo++;
-    display();
+    display_easy();
 }
 
 int main()
 {
     
-    system("color 09");
+    system("color 0B");
     menu();
     
     
