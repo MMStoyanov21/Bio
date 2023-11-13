@@ -213,10 +213,6 @@ void menu() {
     } while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
     
 }
-
-void printCenteredText()
-{
-}
 void displayRandomQuestionEasy() {
     system("color 0A");
     srand(time(0));
@@ -570,14 +566,14 @@ void questionEasy(string question, string a, string b, string c, string d, char 
         char answer;
         cout << endl << endl << "Please input your answer: ";
         cin >> answer;
-        if (answer == correctAnswer) {
+        if (answer == correctAnswer || answer == int(correctAnswer - 32)) {
             correct += 10;
 
         }
         if (answer == '0') {//this if statement is if you want to exit the game
             choiceEasy();
         }
-        if (answer != correctAnswer) {
+        if (answer == correctAnswer || answer == int(correctAnswer - 32)) {
             wrong++;
             correct -= 5;
         }
@@ -591,14 +587,14 @@ void questionMedium(string question, string a, string b, string c, string d, cha
     char answer;
     cout << endl << endl << "Please input your answer: ";
     cin >> answer;
-    if (answer == correctAnswer) {
+    if (answer == correctAnswer || answer == int(correctAnswer - 32)) {
         correct += 10;
 
     }
     if (answer == '0') {
         choiceMedium();
     }
-    if(answer != correctAnswer) {
+    if(answer != correctAnswer && answer != int(correctAnswer - 32)) {
         wrong++;
         correct -= 5;
     }
@@ -611,14 +607,14 @@ void questionHard(string question, string a, string b, string c, string d, char 
     char answer;
     cout << endl << endl << "Please input your answer: ";
     cin >> answer;
-    if (answer == correctAnswer) {
+    if (answer == correctAnswer || answer == int(correctAnswer - 32)) {
         correct += 10;
 
     }
     if (answer == '0') {
         choiceHard();
     }
-    if(answer != correctAnswer) {
+    if(answer == correctAnswer || answer == int(correctAnswer - 32)) {
         wrong++;
         correct -= 5;
     }
