@@ -5,12 +5,13 @@
 
 
 
-
+//the function system("color ...")is a general function
 using namespace std;
+//predefining the variables so that we can use them across the code freely
 int qNo = 1;
 int correct = 0;
 int wrong = 0;
-bool askEasy[6] = {true, true, true, true, true, true};
+bool askEasy[5] = {true, true, true, true, true};
 bool askMedium[7] = {true, true, true, true, true, true, true};
 bool askHard[10] = {true, true, true, true, true, true, true, true, true, true};
 void menu();
@@ -21,6 +22,7 @@ void displayRandomQuestionHard();
 void displayRandomQuestionEasy();
 void displayRandomQuestionMedium();
 void levels();
+//these functions are for the choice to resume or leave the game
 void choiceEasy() {
     int num;
     do {
@@ -87,7 +89,7 @@ void levels() {
         cin >> choice;
         switch (choice) {
         case 1:
-            displayEasy();
+            displayEasy();//Calling the functions that are for each of the levels
             break;
         case 2:
             displayMedium();
@@ -100,11 +102,11 @@ void levels() {
             break;
         }
 
-    } while (choice != 1 && choice != 2 && choice != 3 && choice != 0);
+    } while (choice != 1 && choice != 2 && choice != 3 && choice != 0);//even if you type something else it won't affect the loop
 }
 
 void displayHard() {
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 10; i++) {//the for loops are for how many times the statistics will show
         system("cls");
         cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl <<"If you want to exit enter 0"<<endl<< endl;
         displayRandomQuestionHard();
@@ -112,7 +114,7 @@ void displayHard() {
     system("color 0C");
 }
 void displayMedium() {
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 7; i++) {
         system("cls");
         cout << "Question NO:" << qNo << "\t\tYour points are:" << correct << "\t\tTimes you made a mistake:" << wrong << endl << "If you want to exit enter 0" << endl << endl;
         displayRandomQuestionMedium();
@@ -164,7 +166,7 @@ void credits() {
  
 
 
-
+//predefining the functions because they're used in the code bellow 
 void questionEasy(string question,string a, string b, string c,string d, char correctAnswer);
 void questionMedium(string question, string a, string b, string c, string d, char correctAnswer);
 void questionHard(string question, string a, string b, string c, string d, char correctAnswer);
@@ -261,7 +263,7 @@ void displayRandomQuestionMedium() {
     
     system("color 06"); 
     srand(time(0));
-    //it makes sure the number is random//
+    
     bool isQuestionRemaining = false;
     for (int i = 0; i < 10; i++) {
         if (askMedium[i]) {
@@ -272,7 +274,7 @@ void displayRandomQuestionMedium() {
     while (isQuestionRemaining) {
         int num = rand() % 10;
         if (askMedium[num]) {
-            askMedium[num] = false;
+            askMedium[num] = false;//the array of ask__ is for how many questions will show on the screen
             switch (num) {
             case 0:
                 questionMedium("What is the term for the variety of life in a particular habitat?", "Biodiversity", "Ecosystem", "Community", "Population", 'a');
@@ -316,7 +318,7 @@ void displayRandomQuestionMedium() {
 void displayRandomQuestionHard() {
     system("color 04");
     srand(time(0));
-    //it makes sure the number is random//
+    
     bool isQuestionRemaining = false;
     for (int i = 0; i < 10; i++) {
         if (askHard[i]) {
@@ -372,7 +374,7 @@ void resultEasy()
 {
     int back;
     system("cls");
-    if (correct == 50)
+    if (correct == 50)//for every level there are points set to be reached
     {
         cout << "                                                                                    ,---,    ,---,    ,---, " << endl;
         cout << "                                                                                 ,`--.' | ,`--.' | ,`--.' | " << endl;
@@ -557,7 +559,7 @@ void questionEasy(string question, string a, string b, string c, string d, char 
             correct += 10;
 
         }
-        if (answer == '0') {
+        if (answer == '0') {//this if statement is if you want to exit the game
             choiceEasy();
         }
         if (answer != correctAnswer) {
