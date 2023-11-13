@@ -25,67 +25,73 @@ void levels();
 //these functions are for the choice to resume or leave the game
 void choiceEasy() {
     int num;
+    system("cls");
+    cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
     do {
-        system("cls");
-        cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
         cin >> num;
         switch (num) {
         case 1:
-            cout << "You chose tho resume the game";
+            cout << "You chose to resume the game";
             displayEasy();
             break;
         case 2:
             cout << "You chose to return to the menu";
             levels();
             break;
+        default:
+            cout << "Incorrect input. Please enter a valid choice (1, 2).\nEnter your choice: ";
         }
     } while (num != 1 && num != 2);
 }
 void choiceMedium() {
     int num;
+    system("cls");
+    cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
     do {
-        system("cls");
-        cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
         cin >> num;
         switch (num) {
         case 1:
-            cout << "You chose tho resume the game";
+            cout << "You chose to resume the game";
             displayMedium();
             break;
         case 2:
             cout << "You chose to return to the menu";
             levels();
             break;
+        default:
+            cout << "Incorrect input. Please enter a valid choice (1, 2).\nEnter your choice: ";
         }
     } while (num != 1 && num != 2);
 }
 void choiceHard() {
+    system("cls");
+    cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
     int num;
     do {
-        system("cls");
-        cout << "1 - RESUME" << endl << "2 - RETURN TO MENU" << endl << endl << "Enter your choice: ";
         cin >> num;
         switch (num) {
         case 1:
-            cout << "You chose tho resume the game";
+            cout << "You chose to resume the game";
             displayHard();
             break;
         case 2:
             cout << "You chose to return to the menu";
             levels();
             break;
+        default:
+            cout << "Incorrect input. Please enter a valid choice (1, 2).\nEnter your choice: ";
         }
     } while (num != 1 && num != 2);
 }
 void levels() {
+    system("cls");
+    cout << "1 - EASY" << endl;
+    cout << "2 - MEDIUM" << endl;
+    cout << "3 - HARD" << endl;
+    cout << "0 - RETURN TO MENU" << endl;
+    cout << "\nEnter your choice: ";
     int choice;
     do {
-        system("cls");
-        cout << "1 - EASY" << endl;
-        cout << "2 - MEDIUM" << endl;
-        cout << "3 - HARD" << endl;
-        cout << "0 - RETURN TO MENU" << endl;
-        cout << "\nEnter your choice: ";
         cin >> choice;
         switch (choice) {
         case 1:
@@ -100,9 +106,11 @@ void levels() {
         case 0:
             menu();
             break;
+        default:
+            cout << "Incorrect input. Please enter a valid choice (1, 2, 3, or 0).\nEnter your choice: ";
         }
 
-    } while (choice != 1 && choice != 2 && choice != 3 && choice != 0);//even if you type something else it won't affect the loop
+    } while (choice != 1 && choice != 2 && choice != 3 && choice != 0);
 }
 
 void displayHard() {
@@ -134,14 +142,16 @@ void menu();
 void rules() {
     system("cls");
     int back;
+    cout << "If you want to win the game you have to answer 10 questions.\nFor every right question you get 10 points. But if you make \na mistake you will lose 5 points." << endl;
+    cout << endl << endl << "Now that you've read the rules you can go back by pressing 0: ";
     do {
-        cout << "If you want to win the game you have to answer 10 questions.\nFor every right question you get 10 points. But if you make \na mistake you will lose 5 points." << endl;
-        cout << endl << endl << "Now that you've read the rules you can go back by pressing 0: ";
         cin >> back;
         switch (back) {
         case 0:
             menu();
             break;
+        default:
+            cout << "Incorrect input. Please enter a valid choice (0).\nEnter your choice: ";
         }
     } while (back != 0);
     system("color 0B");
@@ -151,13 +161,15 @@ void rules() {
 void credits() {
     system("cls");
     int back;
+    cout << "The game is made by:" << endl << "Martin Stoyanov" << endl << "Yana Ilcheva" << endl << "Polina Dineva" << endl << endl << "If you want to exit the credits enter 0: ";
     do {
-        cout << "The game is made by:" << endl << "Martin Stoyanov" << endl << "Yana Ilcheva" << endl << "Polina Dineva" << endl << endl << "If you want to exit the credits enter 0: ";
         cin >> back;
         switch (back) {
         case 0:
             menu();
             break;
+        default:
+            cout << "Incorrect input. Please enter a valid choice (0).\nEnter your choice: ";
         }
     } while (back != 0);
     system("color 0B");
@@ -175,10 +187,10 @@ void resultMedium();
 void resultHard();
 
 void menu() {
+    system("CLS");
+    cout << "1-LEVELS" << endl << "2-RULES" << endl << "3-CREDITS" << endl << "4-EXIT" << endl << endl << "Enter your choice: ";
     int choice;
     do {
-        system("CLS");
-        cout << "1-LEVELS" << endl << "2-RULES" << endl << "3-CREDITS" << endl << "4-EXIT" << endl << endl << "Enter your choice: ";
         cin >> choice;
         switch (choice) {
         case 1:
@@ -195,7 +207,8 @@ void menu() {
             break;
         case 4:
             exit(0);
-        default: continue;
+        default: 
+            cout << "Incorrect input. Please enter a valid choice (1, 2, 3, or 4).\nEnter your choice: ";
         }
     } while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
     
@@ -429,7 +442,8 @@ void resultEasy()
             break;
         }
     }
-}void resultMedium()
+}
+void resultMedium()
 {
     int back;
     system("cls");
@@ -488,7 +502,8 @@ void resultEasy()
             break;
         }
     }
-}void resultHard()
+}
+void resultHard()
 {
     int back;
     system("cls");
