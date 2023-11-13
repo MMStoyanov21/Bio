@@ -10,7 +10,7 @@ using namespace std;
 int qNo = 1;
 int correct = 0;
 int wrong = 0;
-bool askEasy[5] = {true, true, true, true, true};
+bool askEasy[6] = {true, true, true, true, true, true};
 bool askMedium[7] = {true, true, true, true, true, true, true};
 bool askHard[10] = {true, true, true, true, true, true, true, true, true, true};
 void menu();
