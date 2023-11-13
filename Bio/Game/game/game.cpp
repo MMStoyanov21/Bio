@@ -49,7 +49,7 @@ void choiceMedium() {
         cin >> num;
         switch (num) {
         case 1:
-            cout << "You chose tho resume the game";
+            cout << "You chose to resume the game";
             displayMedium();
             break;
         case 2:
@@ -67,7 +67,7 @@ void choiceHard() {
         cin >> num;
         switch (num) {
         case 1:
-            cout << "You chose tho resume the game";
+            cout << "You chose to resume the game";
             displayHard();
             break;
         case 2:
